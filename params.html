@@ -8,5 +8,28 @@
 </head>
 <body>
 
+<div id="box" style="width:100px; height:100px; background:green";></div>
+<hr>
+<input id="color" type="color" value="#00FF00" onchange="color(this.value)">
+<input id="size" type="range"  min="10" max="200" step="10"  value="100" oninput="size_box()">
+
+
+<script>
+
+var size = document.getElementById('size');
+var box = document.getElementById('box');
+
+function size_box(){
+  var val = size.value;
+  box.style.width = val + "px";
+  box.style.height = val + "px";
+}
+function color(val){
+document.body.children[0].style.background=val;
+}
+color();
+
+
+</script>
 </body>
 </html>
